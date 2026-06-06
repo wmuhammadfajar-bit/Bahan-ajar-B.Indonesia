@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bahan Ajar – Kalimat Transitif & Intransitif | Kelas 4 SD</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+/* ============================================================ ROOT ============================================================ */
+:root {
+  --hijau:#3d9970;     --hijau-tua:#2e7d5e;   --hijau-muda:#d4eddf;
+  --biru:#4a86b8;      --biru-tua:#3a6d96;    --biru-muda:#d3e4f0;
+  --kuning:#c8973a;    --kuning-tua:#a87028;  --kuning-muda:#faf0dc;
+  --merah:#c0574a;     --merah-muda:#f5ddd9;
+  --ungu:#7d5fa0;      --ungu-muda:#ede5f5;
+  --putih:#fff;        --abu-muda:#f5f6f8;    --abu:#e4e8ec;
+  --teks:#2d3748;      --teks-abu:#718096;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.07);
+  --shadow:0 6px 20px rgba(0,0,0,.09);
+  --shadow-lg:0 12px 36px rgba(0,0,0,.12);
+  --r:18px; --rs:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--teks);background:#eef1f5;min-height:100vh}
+button{cursor:pointer;font-family:'Nunito',sans-serif}
+
+/* ============================================================ ANIMASI ============================================================ */
+@keyframes fadeUp  {from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn  {from{opacity:0}to{opacity:1}}
+@keyframes slideR  {from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideL  {from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes bounce  {0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes wiggle  {0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+@keyframes shimmer {0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes pulse   {0%,100%{box-shadow:0 6px 20px rgba(61,153,112,.35)}50%{box-shadow:0 12px 36px rgba(61,153,112,.55)}}
+@keyframes starBurst{0%{transform:scale(0) rotate(-30deg);opacity:0}60%{transform:scale(1.4) rotate(8deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes trophyIn{0%{transform:scale(0) translateY(40px);opacity:0}70%{transform:scale(1.15) translateY(-6px);opacity:1}100%{transform:scale(1) translateY(0);opacity:1}}
+@keyframes confetti{0%{transform:translateY(-10px) rotate(0);opacity:1}100%{transform:translateY(60px) rotate(360deg);opacity:0}}
+@keyframes checkPop{0%{transform:scale(0)}70%{transform:scale(1.3)}100%{transform:scale(1)}}
+
+/* ============================================================ COVER ============================================================ */
+#page-cover{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;width:100%;padding:32px 16px;
+  background:linear-gradient(160deg,#dff0ea 0%,#dce9f5 40%,#f5edd8 100%);
+  position:relative;overflow:hidden;
+}
+#page-cover::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 12% 18%,rgba(61,153,112,.12) 70px,transparent 70px),
+    radial-gradient(circle at 88% 14%,rgba(74,134,184,.10) 90px,transparent 90px),
+    radial-gradient(circle at 8%  82%,rgba(200,151,58,.10) 80px,transparent 80px),
+    radial-gradient(circle at 92% 78%,rgba(125,95,160,.09) 100px,transparent 100px),
+    radial-gradient(circle at 50% 96%,rgba(192,87,74,.09) 60px,transparent 60px);
+  pointer-events:none;
+}
+.cover-deco{position:absolute;font-size:2.4rem;opacity:.16;animation:wiggle 4s infinite;pointer-events:none}
+.cover-deco:nth-child(1){top:7%;left:3%;animation-delay:0s}
+.cover-deco:nth-child(2){top:11%;right:4%;animation-delay:.6s;font-size:2rem}
+.cover-deco:nth-child(3){bottom:20%;left:2%;animation-delay:1.2s;font-size:1.9rem}
+.cover-deco:nth-child(4){bottom:9%;right:3%;animation-delay:1.8s}
+.cover-deco:nth-child(5){top:48%;left:1.5%;animation-delay:.4s;font-size:1.6rem}
+
+/* maskot buku cover */
+.cover-maskot{
+  position:relative;width:120px;height:120px;margin:0 auto 18px;
+  animation:bounce 2.5s infinite;
+}
+.cover-maskot svg{width:100%;height:100%}
+
+.cover-card{
+  background:var(--putih);border-radius:28px;padding:44px 38px 38px;
+  box-shadow:var(--shadow-lg);max-width:680px;width:100%;
+  position:relative;overflow:hidden;animation:fadeUp .7s ease both;text-align:center;
+}
+.cover-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:8px;
+  background:linear-gradient(90deg,var(--hijau),var(--biru),var(--kuning),var(--merah),var(--ungu));
+  background-size:200% auto;animation:shimmer 4s linear infinite;
+}
+.cover-badge{
+  background:linear-gradient(135deg,var(--hijau),var(--biru));
+  color:#fff;font-weight:800;font-size:.85rem;
+  padding:7px 20px;border-radius:20px;display:inline-block;margin-bottom:16px;
+}
+.cover-card h1{font-family:'Fredoka One',cursive;font-size:2.3rem;color:var(--hijau-tua);line-height:1.2;margin-bottom:7px}
+.cover-card h2{font-size:.97rem;color:var(--biru-tua);font-weight:700;margin-bottom:16px}
+.cover-divider{width:60px;height:4px;background:linear-gradient(90deg,var(--kuning),var(--merah));border-radius:4px;margin:0 auto 14px}
+.cover-desc{font-size:.92rem;color:var(--teks-abu);line-height:1.7;margin-bottom:22px}
+.penulis-box{background:var(--abu-muda);border-radius:var(--rs);padding:18px 22px;text-align:left;border:2px solid var(--abu)}
+.penulis-box h3{font-family:'Fredoka One',cursive;color:var(--biru-tua);font-size:.94rem;margin-bottom:12px;text-align:center}
+.penulis-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.penulis-item{display:flex;align-items:center;gap:8px;font-size:.86rem;font-weight:700;color:var(--teks)}
+.penulis-num{background:var(--hijau);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0}
+.btn-mulai{
+  margin-top:26px;background:linear-gradient(135deg,var(--hijau),var(--biru));
+  color:#fff;border:none;border-radius:28px;padding:16px 50px;
+  font-family:'Fredoka One',cursive;font-size:1.2rem;
+  animation:pulse 2s infinite;transition:transform .2s;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.btn-mulai:hover{transform:scale(1.07)}
+
+/* ============================================================ APP ============================================================ */
+#app{display:none;min-height:100vh;background:#eef1f5}
+
+/* ============================================================ NAV ============================================================ */
+#app-nav{
+  background:linear-gradient(90deg,#2e7d5e,#3a6d96);
+  padding:0 24px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:200;
+  box-shadow:0 4px 16px rgba(0,0,0,.18);min-height:58px;
+}
+.nav-brand{font-family:'Fredoka One',cursive;font-size:1.1rem;color:#fff;display:flex;align-items:center;gap:8px;cursor:pointer;padding:10px 0;transition:opacity .2s}
+.nav-brand:hover{opacity:.85}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;padding:8px 0}
+.nav-btn{
+  background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.45);
+  color:#fff;font-weight:700;font-size:.79rem;padding:6px 13px;border-radius:20px;
+  transition:all .2s;display:flex;align-items:center;gap:5px;position:relative;
+}
+.nav-btn:hover{background:rgba(255,255,255,.85);color:var(--biru-tua)}
+.nav-btn.aktif{background:rgba(255,255,255,.95);color:var(--biru-tua);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+/* centang kecil di tombol nav */
+.nav-btn .nav-check{
+  display:none;width:14px;height:14px;background:var(--hijau-tua);
+  border-radius:50%;align-items:center;justify-content:center;
+  font-size:.6rem;color:#fff;font-weight:900;flex-shrink:0;
+  animation:checkPop .3s ease;
+}
+.nav-btn.visited .nav-check{display:flex}
+.star-count{background:#e8d5a0;color:#6b4c10;font-weight:900;font-size:.78rem;padding:3px 10px;border-radius:12px;margin-left:4px;display:inline-flex;align-items:center;gap:3px}
+
+/* progress bar */
+.progress-bar-wrap{height:5px;background:rgba(255,255,255,.25)}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--kuning),var(--hijau));border-radius:4px;transition:width .5s ease}
+/* ============================================================ SECTIONS (TRANSISI) ============================================================ */
+.section{display:none;padding:36px 24px 72px;max-width:940px;margin:0 auto}
+.section.aktif{display:block}
+/* kelas animasi dipasang lewat JS */
+.anim-right{animation:slideR .38s ease both}
+.anim-left {animation:slideL .38s ease both}
+.anim-up   {animation:fadeUp .38s ease both}
+
+/* nav bawah */
+.page-nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:36px;flex-wrap:wrap;gap:12px}
+.btn-nav{display:flex;align-items:center;gap:8px;padding:12px 24px;border-radius:24px;border:none;font-weight:800;font-size:.9rem;transition:all .2s}
+.btn-nav.prev{background:var(--abu);color:var(--teks)}
+.btn-nav.next{background:linear-gradient(135deg,var(--hijau),var(--biru));color:#fff;box-shadow:0 4px 14px rgba(61,153,112,.28)}
+.btn-nav:hover{transform:translateY(-2px)}
+.btn-nav.next:hover{box-shadow:0 6px 22px rgba(61,153,112,.42)}
+.page-indicator{font-size:.82rem;font-weight:700;color:var(--teks-abu);background:var(--abu);padding:6px 16px;border-radius:20px}
+
+/* ============================================================ SEC HEADER ============================================================ */
+.sec-header{text-align:center;margin-bottom:28px}
+.sec-icon{font-size:3rem;display:block;margin-bottom:10px;animation:bounce 2.5s infinite}
+.sec-header h2{font-family:'Fredoka One',cursive;font-size:1.85rem;color:var(--teks);margin-bottom:6px}
+.sec-header p{color:var(--teks-abu);font-size:.94rem}
+
+/* maskot di header section */
+.maskot-inline{font-size:2rem;display:inline-block;animation:wiggle 3s infinite}
+
+/* ============================================================ CARD ============================================================ */
+.card{background:var(--putih);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:20px;border:1.5px solid var(--abu);transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shadow)}
+.card-title{font-family:'Fredoka One',cursive;font-size:1.22rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.card p{line-height:1.8;font-size:.95rem;color:#444;margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+
+/* ============================================================ REWARD BANNER ============================================================ */
+.reward-banner{
+  display:none;background:linear-gradient(135deg,#f5edd8,#f0e8cc);
+  border:2px solid #d4a855;border-radius:var(--rs);
+  padding:14px 20px;margin-bottom:20px;
+  align-items:center;gap:14px;animation:fadeUp .4s ease;
+}
+.reward-banner.show{display:flex}
+.reward-stars{font-size:1.5rem;letter-spacing:2px}
+.reward-banner p{font-weight:700;font-size:.9rem;color:#7a5020;margin:0}
+
+/* ============================================================ TROPHY MODAL ============================================================ */
+#trophy-modal{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;
+}
+#trophy-modal.show{display:flex}
+.trophy-card{
+  background:var(--putih);border-radius:28px;padding:44px 40px;text-align:center;
+  max-width:420px;width:90%;position:relative;overflow:hidden;
+  animation:trophyIn .6s cubic-bezier(.34,1.56,.64,1) both;
+  box-shadow:var(--shadow-lg);
+}
+.trophy-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:7px;
+  background:linear-gradient(90deg,var(--kuning),var(--merah),var(--ungu));
+  opacity:.8;
+}
+.trophy-icon{font-size:5rem;display:block;margin-bottom:12px;animation:bounce 1.5s infinite}
+.trophy-card h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--kuning-tua);margin-bottom:8px}
+.trophy-card p{font-size:.94rem;color:var(--teks-abu);line-height:1.6;margin-bottom:20px}
+.trophy-stars{font-size:2rem;letter-spacing:4px;display:block;margin-bottom:20px;animation:starBurst .5s ease both}
+.btn-trophy-close{
+  background:linear-gradient(135deg,var(--kuning-tua),var(--merah));
+  color:#fff;border:none;border-radius:24px;padding:13px 36px;
+  font-family:'Fredoka One',cursive;font-size:1rem;
+  box-shadow:0 4px 16px rgba(168,112,40,.3);transition:transform .2s;
+}
+.btn-trophy-close:hover{transform:scale(1.07)}
+/* confetti dots */
+.confetti-dot{
+  position:absolute;width:10px;height:10px;border-radius:2px;
+  animation:confetti 1.2s ease forwards;
+}
+
+/* ============================================================ DAFTAR ISI ============================================================ */
+.daftar-list{display:flex;flex-direction:column;gap:12px}
+.daftar-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-radius:var(--rs);cursor:pointer;
+  transition:all .2s;border-left:6px solid transparent;
+  font-weight:700;font-size:.95rem;box-shadow:var(--shadow-sm);
+}
+.daftar-item:hover{transform:translateX(8px);box-shadow:var(--shadow)}
+.di-left{display:flex;align-items:center;gap:12px}
+.di-icon{font-size:1.4rem}
+.di-arrow{font-size:1.3rem;color:var(--teks-abu);transition:transform .2s}
+.daftar-item:hover .di-arrow{transform:translateX(5px);color:var(--teks)}
+.di-1{background:var(--hijau-muda);border-color:var(--hijau)}
+.di-2{background:var(--biru-muda);border-color:var(--biru)}
+.di-3{background:var(--kuning-muda);border-color:var(--kuning-tua)}
+.di-4{background:#e8daef;border-color:var(--ungu)}
+.di-5{background:var(--merah-muda);border-color:var(--merah)}
+/* centang di daftar isi */
+.daftar-item .di-check{display:none;font-size:.9rem;background:var(--hijau);color:#fff;border-radius:50%;width:22px;height:22px;align-items:center;justify-content:center;flex-shrink:0;animation:checkPop .3s ease}
+.daftar-item.visited .di-check{display:flex}
+
+/* ============================================================ KATA PENGANTAR ============================================================ */
+.pengantar-box{background:linear-gradient(135deg,#f0fdf4,#eff6ff);border-radius:var(--r);padding:28px 32px;border:2px solid var(--abu);box-shadow:var(--shadow-sm);margin-bottom:20px}
+.pg-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.pg-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--hijau),var(--biru));display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;box-shadow:0 4px 12px rgba(46,204,113,.3)}
+.pg-judul h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--hijau-tua);margin-bottom:2px}
+.pg-judul span{font-size:.8rem;color:var(--teks-abu);font-weight:600}
+.pengantar-box p{font-size:.93rem;line-height:1.85;color:#444;margin-bottom:12px;text-align:justify}
+.pengantar-box p:last-of-type{margin-bottom:0}
+.pengantar-ttd{margin-top:20px;text-align:right;font-size:.88rem;color:var(--teks-abu);font-weight:600}
+.pengantar-ttd strong{display:block;color:var(--teks);font-size:.92rem;margin-top:2px}
+
+/* ============================================================ TUJUAN ============================================================ */
+.tujuan-box{background:linear-gradient(135deg,var(--hijau-muda),var(--biru-muda));border-radius:var(--rs);padding:20px 24px;border-left:6px solid var(--hijau);margin-top:14px}
+.tujuan-box h3{font-family:'Fredoka One',cursive;color:var(--hijau-tua);font-size:1rem;margin-bottom:10px}
+.tujuan-box p{color:#1a6630;font-weight:700;font-size:.94rem;line-height:1.7;margin:0}
+.petunjuk-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.petunjuk-list li{display:flex;align-items:flex-start;gap:12px;background:var(--abu-muda);border-radius:var(--rs);padding:12px 16px;font-size:.92rem;line-height:1.6}
+.p-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px}
+
+/* ============================================================ MASKOT KARAKTER (SVG inline) ============================================================ */
+.maskot-wrap{display:flex;justify-content:center;margin-bottom:16px}
+.maskot-char{width:90px;height:90px;animation:wiggle 3s infinite}
+
+/* ============================================================ MATERI TABS ============================================================ */
+.tab-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{
+  padding:11px 20px;border-radius:24px;border:2.5px solid transparent;
+  font-weight:800;font-size:.87rem;transition:all .2s;
+  display:flex;align-items:center;gap:7px;position:relative;
+}
+.tab-btn:hover{transform:translateY(-2px)}
+/* centang di tab */
+.tab-btn .tab-check{display:none;width:16px;height:16px;background:rgba(0,0,0,.2);border-radius:50%;align-items:center;justify-content:center;font-size:.6rem;color:#fff;animation:checkPop .3s ease}
+.tab-btn.tab-done .tab-check{display:flex}
+.tb-t{background:var(--hijau-muda);border-color:var(--hijau);color:var(--hijau-tua)}
+.tb-i{background:var(--biru-muda);border-color:var(--biru);color:var(--biru-tua)}
+.tb-p{background:var(--kuning-muda);border-color:var(--kuning-tua);color:var(--kuning-tua)}
+.tb-t.on{background:var(--hijau);color:#fff;box-shadow:0 4px 14px rgba(46,204,113,.4)}
+.tb-i.on{background:var(--biru);color:#fff;box-shadow:0 4px 14px rgba(52,152,219,.4)}
+.tb-p.on{background:var(--kuning-tua);color:#fff;box-shadow:0 4px 14px rgba(230,126,34,.4)}
+
+.tab-panel{display:none}
+.tab-panel.on{display:block;animation:slideR .3s ease}
+
+/* ============================================================ DEFINISI & CIRI ============================================================ */
+.def-box{border-radius:var(--rs);padding:20px 22px;margin-bottom:18px}
+.def-t{background:var(--hijau-muda);border-left:6px solid var(--hijau)}
+.def-i{background:var(--biru-muda);border-left:6px solid var(--biru)}
+.def-box h3{font-family:'Fredoka One',cursive;font-size:1.12rem;margin-bottom:8px}
+.def-t h3{color:var(--hijau-tua)}.def-i h3{color:var(--biru-tua)}
+.def-box p{font-size:.93rem;line-height:1.75;color:#333;margin:0}
+.ciri-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0}
+.ciri-card{border-radius:var(--rs);padding:14px 15px;font-size:.84rem;font-weight:700;display:flex;align-items:flex-start;gap:10px;box-shadow:var(--shadow-sm)}
+.ciri-t{background:#c2ddd0;color:#1d5c40}.ciri-i{background:#bdd4e8;color:#234e72}
+.ciri-icon{font-size:1.3rem;flex-shrink:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.leg{font-size:.78rem;font-weight:800;padding:5px 13px;border-radius:8px}
+.leg-s{background:#fdecea;color:var(--merah)}.leg-p{background:var(--ungu-muda);color:var(--ungu)}
+.leg-o{background:var(--hijau-muda);color:var(--hijau-tua)}.leg-k{background:var(--biru-muda);color:var(--biru-tua)}
+.sub-sec-title{font-family:'Fredoka One',cursive;font-size:1rem;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.contoh-wrap{display:flex;flex-direction:column;gap:10px}
+.contoh-item{background:var(--putih);border-radius:var(--rs);padding:14px 18px;box-shadow:var(--shadow-sm);border-left:5px solid var(--hijau);transition:transform .2s,box-shadow .2s;cursor:default}
+.contoh-item.ci{border-color:var(--biru)}
+.contoh-item:hover{transform:translateX(6px);box-shadow:var(--shadow)}
+.k-kalimat{font-weight:800;font-size:1rem;margin-bottom:6px}
+.k-analisis{font-size:.9rem;color:#666;line-height:1.6}
+.hs{color:var(--merah);font-weight:900}.hp{color:var(--ungu);font-weight:900}
+.ho{color:var(--hijau-tua);font-weight:900}.hk{color:var(--biru);font-weight:900}
+.tips-box{background:var(--kuning-muda);border-radius:var(--rs);padding:18px 20px;border-left:5px solid var(--kuning-tua);margin-top:16px}
+.tips-box h4{font-family:'Fredoka One',cursive;color:var(--kuning-tua);margin-bottom:8px;font-size:1rem}
+.tips-box p{font-size:.9rem;line-height:1.8;color:#5d4037;margin:0}
+
+/* ============================================================ PERBANDINGAN ============================================================ */
+.tbl-scroll{width:100%;overflow-x:auto;border-radius:var(--rs);box-shadow:var(--shadow)}
+.perb-tbl{width:100%;border-collapse:collapse;min-width:480px}
+.perb-tbl th{padding:13px 16px;font-family:'Fredoka One',cursive;font-size:.92rem;color:#fff;text-align:left}
+.perb-tbl th:first-child{background:#546e7a;width:28%}
+.perb-tbl th:nth-child(2){background:var(--hijau-tua)}
+.perb-tbl th:nth-child(3){background:var(--biru-tua)}
+.perb-tbl td{padding:12px 16px;font-size:.88rem;border-bottom:1px solid #eee;vertical-align:top;line-height:1.55}
+.perb-tbl tr:last-child td{border-bottom:none}
+.perb-tbl tr:nth-child(even) td{background:var(--abu-muda)}
+.perb-tbl td:first-child{font-weight:700;color:#455a64}
+
+/* ============================================================ RANGKUMAN ============================================================ */
+.rangkuman-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.rangkuman-card{border-radius:var(--r);padding:22px;box-shadow:var(--shadow-sm)}
+.rk-t{background:linear-gradient(135deg,#e8f8f0,var(--hijau-muda));border:2px solid var(--hijau)}
+.rk-i{background:linear-gradient(135deg,#ebf5fb,var(--biru-muda));border:2px solid var(--biru)}
+.rangkuman-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.rk-t h3{color:var(--hijau-tua)}.rk-i h3{color:var(--biru-tua)}
+.rangkuman-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.rangkuman-card ul li{font-size:.88rem;line-height:1.55;font-weight:600;display:flex;gap:7px}
+.rangkuman-card ul li::before{content:'✓';font-weight:900;flex-shrink:0}
+.rk-t ul li::before{color:var(--hijau-tua)}.rk-i ul li::before{color:var(--biru-tua)}
+.ingat-box{background:linear-gradient(135deg,#fef9e7,#fef5e7);border-radius:var(--rs);padding:20px 22px;border:2px solid var(--kuning);display:flex;align-items:flex-start;gap:14px}
+.ingat-box .ingat-icon{font-size:2.2rem;flex-shrink:0}
+.ingat-box div h4{font-family:'Fredoka One',cursive;color:var(--kuning-tua);font-size:1rem;margin-bottom:6px}
+.ingat-box div p{font-size:.9rem;line-height:1.7;color:#5d4037;margin:0}
+
+/* DAFTAR KATA KERJA */
+.kk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.kk-card{border-radius:var(--rs);padding:18px 20px;box-shadow:var(--shadow-sm)}
+.kk-t{background:var(--hijau-muda);border:2px solid var(--hijau)}
+.kk-i{background:var(--biru-muda);border:2px solid var(--biru)}
+.kk-card h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.kk-t h4{color:var(--hijau-tua)}.kk-i h4{color:var(--biru-tua)}
+.kk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.kk-tag{font-size:.79rem;font-weight:700;padding:4px 12px;border-radius:20px;transition:transform .15s;cursor:default}
+.kk-tag:hover{transform:scale(1.1)}
+.kk-t .kk-tag{background:#fff;color:var(--hijau-tua);border:1.5px solid var(--hijau)}
+.kk-i .kk-tag{background:#fff;color:var(--biru-tua);border:1.5px solid var(--biru)}
+.kk-catatan{margin-top:14px;background:var(--ungu-muda);border-radius:var(--rs);padding:12px 16px;border-left:4px solid var(--ungu);font-size:.86rem;color:#5b2c6f;font-weight:600;line-height:1.6}
+
+/* ============================================================ RUBRIK ============================================================ */
+.btn-cetak{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--ungu),#5c3d7a);color:#fff;border:none;border-radius:24px;padding:12px 28px;font-family:'Fredoka One',cursive;font-size:1rem;box-shadow:0 4px 14px rgba(125,95,160,.3);transition:all .2s;margin-bottom:20px}
+.btn-cetak:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(125,95,160,.45)}
+
+/* Tabel desktop */
+.rubrik-tbl-wrap{width:100%;overflow-x:auto;border-radius:var(--rs);box-shadow:var(--shadow);margin-bottom:20px}
+.rubrik-tbl{width:100%;border-collapse:collapse;min-width:580px}
+.rubrik-tbl thead .head-row th{padding:13px 15px;font-family:'Fredoka One',cursive;font-size:.87rem;color:#fff;text-align:center;line-height:1.3}
+.rubrik-tbl thead .head-row th:first-child{background:#546e7a;text-align:left;width:24%}
+.rubrik-tbl thead .head-row th:nth-child(2){background:#2e7d5e;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(3){background:#3a6d96;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(4){background:#a07028;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(5){background:#8c3028;width:19%}
+.rubrik-tbl thead .sub-row th{padding:7px 15px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.77rem;text-align:center}
+.rubrik-tbl thead .sub-row th:first-child{background:#eceff1;color:#455a64;text-align:left}
+.rubrik-tbl thead .sub-row th:nth-child(2){background:#c2ddd0;color:#1d5c40}
+.rubrik-tbl thead .sub-row th:nth-child(3){background:#bdd4e8;color:#234e72}
+.rubrik-tbl thead .sub-row th:nth-child(4){background:#f0e0c0;color:#7a5020}
+.rubrik-tbl thead .sub-row th:nth-child(5){background:#f0d0cc;color:#8c3028}
+.rubrik-tbl tbody td{padding:12px 15px;font-size:.86rem;border-bottom:1px solid #e0e0e0;vertical-align:top;line-height:1.55}
+.rubrik-tbl tbody tr:last-child td{border-bottom:none}
+.rubrik-tbl tbody tr:nth-child(even) td{background:#f8f9fa}
+.rubrik-tbl tbody td:first-child{font-weight:700;color:#37474f;background:#f0f2f4!important}
+.rubrik-tbl tbody td:nth-child(2){color:#1d5c40}
+.rubrik-tbl tbody td:nth-child(3){color:#234e72}
+.rubrik-tbl tbody td:nth-child(4){color:#7a5020}
+.rubrik-tbl tbody td:nth-child(5){color:#8c3028}
+.rubrik-tbl.t3 thead .head-row th:first-child{background:#455a64;width:30%}
+.rubrik-tbl.t3 thead .head-row th:nth-child(2){background:var(--ungu);width:18%}
+.rubrik-tbl.t3 thead .head-row th:nth-child(3){background:#34495e;width:52%}
+.rubrik-tbl.t3 thead .sub-row th:nth-child(2){background:var(--ungu-muda);color:var(--ungu)}
+.rubrik-tbl.t3 thead .sub-row th:nth-child(3){background:#eaecee;color:#34495e}
+.rubrik-tbl.t3 tbody td:nth-child(2){text-align:center;color:var(--teks)}
+.rubrik-tbl.t3 tbody td:nth-child(3){color:#444}
+
+/* === RUBRIK KARTU (mobile) === */
+.rubrik-kartu-wrap{display:none;flex-direction:column;gap:12px;margin-bottom:20px}
+.rubrik-kartu{border-radius:var(--rs);padding:16px 18px;box-shadow:var(--shadow-sm);border-left:5px solid var(--ungu);background:var(--putih)}
+.rubrik-kartu .rk-aspek{font-weight:800;font-size:.9rem;color:#37474f;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--abu)}
+.rubrik-kartu .rk-row{display:flex;gap:10px;margin-bottom:6px;align-items:flex-start}
+.rubrik-kartu .rk-label{flex-shrink:0;padding:3px 10px;border-radius:8px;font-weight:800;font-size:.75rem;white-space:nowrap}
+.rk-l4{background:#c2ddd0;color:#1d5c40}.rk-l3{background:#bdd4e8;color:#234e72}
+.rk-l2{background:#f0e0c0;color:#7a5020}.rk-l1{background:#f0d0cc;color:#8c3028}
+.rubrik-kartu .rk-isi{font-size:.84rem;color:#444;line-height:1.5}
+
+/* skor badge */
+.sb4{background:#c2ddd0;color:#1d5c40;display:inline-block;padding:4px 12px;border-radius:8px;font-weight:800;font-size:.83rem;white-space:nowrap}
+.sb3{background:#bdd4e8;color:#234e72;display:inline-block;padding:4px 12px;border-radius:8px;font-weight:800;font-size:.83rem;white-space:nowrap}
+.sb2{background:#f0e0c0;color:#7a5020;display:inline-block;padding:4px 12px;border-radius:8px;font-weight:800;font-size:.83rem;white-space:nowrap}
+.sb1{background:#f0d0cc;color:#8c3028;display:inline-block;padding:4px 12px;border-radius:8px;font-weight:800;font-size:.83rem;white-space:nowrap}
+.nilai-box{background:linear-gradient(135deg,var(--ungu-muda),#e8eaf6);border-radius:var(--rs);padding:22px 24px;border-left:6px solid var(--ungu)}
+.nilai-box h3{font-family:'Fredoka One',cursive;color:var(--ungu);margin-bottom:10px;font-size:1.05rem}
+.nilai-box p{font-size:.91rem;line-height:1.7;color:#444;margin-bottom:8px}
+.rumus{font-family:monospace;background:#fff;padding:9px 16px;border-radius:8px;display:inline-block;margin:4px 0 12px;font-size:.92rem;border:2px solid var(--ungu);color:var(--ungu);font-weight:700}
+.pred-tbl-wrap{border-radius:var(--rs);overflow:hidden;box-shadow:var(--shadow-sm);margin-top:10px}
+.pred-tbl{width:100%;border-collapse:collapse}
+.pred-tbl th{background:var(--ungu);color:#fff;padding:10px 16px;font-family:'Fredoka One',cursive;font-size:.9rem}
+.pred-tbl td{padding:10px 16px;text-align:center;font-weight:700;font-size:.88rem;border-bottom:1px solid #eee}
+.pred-tbl tr:last-child td{border-bottom:none}
+.p-a{background:#c2ddd0;color:#1d5c40}.p-b{background:#bdd4e8;color:#234e72}
+.p-c{background:#f0e0c0;color:#7a5020}.p-d{background:#f0d0cc;color:#8c3028}
+
+/* ============================================================ RESPONSIVE ============================================================ */
+@media(max-width:640px){
+  .cover-card{padding:36px 18px 30px}
+  .cover-card h1{font-size:1.75rem}
+  .penulis-grid{grid-template-columns:1fr}
+  .section{padding:22px 14px 56px}
+  .rangkuman-grid{grid-template-columns:1fr}
+  .kk-grid{grid-template-columns:1fr}
+  .tab-btn{font-size:.79rem;padding:9px 13px}
+  #app-nav{padding:0 12px}
+  .nav-btn{font-size:.74rem;padding:5px 10px}
+  /* sembunyikan tabel, tampilkan kartu */
+  .rubrik-tbl-wrap{display:none}
+  .rubrik-kartu-wrap{display:flex}
+}
+
+/* ============================================================ PRINT ============================================================ */
+@media print{
+  body *{visibility:hidden}
+  #print-area,#print-area *{visibility:visible}
+  #print-area{position:fixed;inset:0;padding:24px 32px;font-family:'Nunito',sans-serif}
+  .rubrik-tbl-wrap{box-shadow:none;overflow:visible}
+  .rubrik-tbl{min-width:unset;font-size:.76rem}
+  .btn-cetak,.page-nav-bottom,.rubrik-kartu-wrap{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div id="page-cover">
+  <span class="cover-deco">📚</span><span class="cover-deco">✏️</span>
+  <span class="cover-deco">🌟</span><span class="cover-deco">🎨</span>
+  <span class="cover-deco">💡</span>
+
+  <div class="cover-card">
+    <!-- Maskot SVG buku tersenyum -->
+    <div class="cover-maskot">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- badan buku -->
+        <rect x="18" y="20" width="84" height="80" rx="10" fill="#3d9970"/>
+        <rect x="22" y="20" width="8" height="80" rx="4" fill="#2e7d5e"/>
+        <rect x="32" y="30" width="60" height="60" rx="6" fill="#fff" opacity=".95"/>
+        <!-- halaman -->
+        <line x1="40" y1="45" x2="82" y2="45" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="54" x2="82" y2="54" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="63" x2="70" y2="63" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>
+        <!-- mata -->
+        <circle cx="52" cy="76" r="4" fill="#2c3e50"/>
+        <circle cx="68" cy="76" r="4" fill="#2c3e50"/>
+        <circle cx="53.5" cy="74.5" r="1.5" fill="#fff"/>
+        <circle cx="69.5" cy="74.5" r="1.5" fill="#fff"/>
+        <!-- senyum -->
+        <path d="M50 84 Q60 92 70 84" stroke="#2c3e50" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- tangan kiri -->
+        <ellipse cx="12" cy="72" rx="7" ry="5" fill="#27ae60" transform="rotate(-20,12,72)"/>
+        <!-- tangan kanan -->
+        <ellipse cx="108" cy="72" rx="7" ry="5" fill="#27ae60" transform="rotate(20,108,72)"/>
+        <!-- bintang kecil -->
+        <text x="88" y="28" font-size="14" fill="#f1c40f">★</text>
+      </svg>
+    </div>
+
+    <div class="cover-badge">Kelas 4 SD &nbsp;•&nbsp; Bahasa Indonesia</div>
+    <h1>Kalimat Transitif<br>&amp; Intransitif</h1>
+    <h2>Mengenal Jenis Kalimat Berdasarkan Objeknya</h2>
+    <div class="cover-divider"></div>
+    <p class="cover-desc">Bahan ajar interaktif yang menyenangkan untuk membantu siswa kelas 4 SD memahami perbedaan kalimat transitif dan intransitif! 🌟</p>
+    <div class="penulis-box">
+      <h3>👥 Disusun oleh — Kelompok 1</h3>
+      <div class="penulis-grid">
+        <div class="penulis-item"><div class="penulis-num">1</div>Aef Faisal Rafli</div>
+        <div class="penulis-item"><div class="penulis-num">2</div>Dewi Ratnasari</div>
+        <div class="penulis-item"><div class="penulis-num">3</div>Erina Cahya Ningtyas</div>
+        <div class="penulis-item"><div class="penulis-num">4</div>Ismaya Nur Octavia</div>
+        <div class="penulis-item"><div class="penulis-num">5</div>Maulida Herdiana</div>
+        <div class="penulis-item"><div class="penulis-num">6</div>Muhammad Fajar Wibowo</div>
+      </div>
+    </div>
+    <button class="btn-mulai" onclick="bukaApp()">🚀 Mulai Belajar!</button>
+  </div>
+</div>
+
+<!-- ===================== TROPHY MODAL ===================== -->
+<div id="trophy-modal">
+  <div class="trophy-card" id="trophy-card">
+    <span class="trophy-icon">🏆</span>
+    <h2>Luar Biasa!</h2>
+    <span class="trophy-stars" id="trophy-stars">⭐⭐⭐⭐⭐⭐</span>
+    <p>Selamat! Kamu telah membuka semua halaman bahan ajar ini. Kamu adalah siswa yang hebat dan rajin belajar! 🎉</p>
+    <button class="btn-trophy-close" onclick="tutupTrophy()">🎊 Terima Kasih!</button>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app">
+  <nav id="app-nav">
+    <div class="nav-brand" onclick="kembaliCover()">📖 Bahan Ajar</div>
+    <div class="nav-links">
+      <button class="nav-btn" id="nb-0" onclick="gotoSec(0,1)">📋 Daftar Isi<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-1" onclick="gotoSec(1,1)">✍️ Pengantar<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-2" onclick="gotoSec(2,1)">📝 Pendahuluan<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-3" onclick="gotoSec(3,1)">📚 Materi<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-4" onclick="gotoSec(4,1)">📌 Rangkuman<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-5" onclick="gotoSec(5,1)">📊 Rubrik<span class="nav-check">✓</span></button>
+      <button class="nav-btn" id="nb-6" onclick="gotoSec(6,1)">🎉 Penutup<span class="nav-check">✓</span></button>
+      <span class="star-count" id="star-display">⭐ 0</span>
+    </div>
+  </nav>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+  </div>
+
+  <!-- ===== DAFTAR ISI ===== -->
+  <div class="section" id="sec-0">
+    <div class="sec-header">
+      <span class="sec-icon">📋</span>
+      <h2>Daftar Isi</h2>
+      <p>Klik salah satu bagian untuk langsung menuju halaman tersebut</p>
+    </div>
+    <div class="reward-banner" id="rb-0"><span class="reward-stars">⭐</span><p>Selamat datang! Kamu mendapat 1 bintang 🎉</p></div>
+    <div class="card">
+      <div class="daftar-list">
+        <div class="daftar-item di-1" id="di-1" onclick="gotoSec(1,1)"><div class="di-left"><span class="di-icon">✍️</span><span>Kata Pengantar</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+        <div class="daftar-item di-2" id="di-2" onclick="gotoSec(2,1)"><div class="di-left"><span class="di-icon">📝</span><span>Pendahuluan &amp; Tujuan Pembelajaran</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+        <div class="daftar-item di-3" id="di-3" onclick="gotoSec(3,1)"><div class="di-left"><span class="di-icon">📚</span><span>Materi — Kalimat Transitif &amp; Intransitif</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+        <div class="daftar-item di-4" id="di-4" onclick="gotoSec(4,1)"><div class="di-left"><span class="di-icon">📌</span><span>Rangkuman Materi</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+        <div class="daftar-item di-5" id="di-5" onclick="gotoSec(5,1)"><div class="di-left"><span class="di-icon">📊</span><span>Rubrik Penilaian</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+        <div class="daftar-item" style="background:#e8f8f0;border-left:6px solid var(--hijau)" id="di-6" onclick="gotoSec(6,1)"><div class="di-left"><span class="di-icon">🎉</span><span>Penutup</span></div><div style="display:flex;align-items:center;gap:8px"><span class="di-check">✓</span><span class="di-arrow">→</span></div></div>
+      </div>
+    </div>
+    <div class="page-nav-bottom">
+      <div></div>
+      <span class="page-indicator">Halaman 1 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(1,1)">✍️ Kata Pengantar &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== KATA PENGANTAR ===== -->
+  <div class="section" id="sec-1">
+    <div class="sec-header">
+      <span class="sec-icon">✍️</span>
+      <h2>Kata Pengantar</h2>
+      <p>Dari penyusun untuk para pembaca</p>
+    </div>
+    <div class="reward-banner" id="rb-1"><span class="reward-stars">⭐⭐</span><p>Kamu membuka Kata Pengantar! +1 bintang 🎉</p></div>
+    <div class="pengantar-box">
+      <div class="pg-header">
+        <div class="pg-icon">📖</div>
+        <div class="pg-judul"><h3>Kata Pengantar</h3><span>Bahan Ajar Bahasa Indonesia — Kelas 4 SD</span></div>
+      </div>
+      <p>Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat dan karunia-Nya sehingga bahan ajar interaktif Bahasa Indonesia untuk Kelas 4 Sekolah Dasar ini dapat diselesaikan dengan baik.</p>
+      <p>Bahan ajar ini disusun sebagai salah satu media pembelajaran yang bertujuan membantu siswa kelas 4 SD dalam memahami materi <strong>kalimat transitif dan kalimat intransitif</strong> secara lebih menyenangkan dan mudah dipahami. Penyusunan bahan ajar ini mengacu pada Kurikulum Merdeka serta mempertimbangkan karakteristik belajar siswa kelas 4 SD yang aktif dan gemar belajar melalui contoh nyata.</p>
+      <p>Dalam bahan ajar ini, siswa akan diajak mengenal pengertian, ciri-ciri, dan contoh kalimat transitif maupun intransitif melalui penyajian materi yang interaktif, berwarna, dan dilengkapi dengan ilustrasi kalimat yang mudah dipahami. Kami berharap bahan ajar ini dapat menjadi sarana yang efektif bagi guru dalam menyampaikan materi dan bagi siswa dalam memahami pelajaran.</p>
+      <p>Kami menyadari bahwa bahan ajar ini masih jauh dari sempurna. Oleh karena itu, kritik dan saran yang membangun dari berbagai pihak sangat kami harapkan demi penyempurnaan ke depannya.</p>
+      <p>Akhir kata, kami mengucapkan terima kasih kepada semua pihak yang telah membantu dalam penyusunan bahan ajar ini. Semoga bahan ajar ini bermanfaat bagi dunia pendidikan, khususnya dalam pembelajaran Bahasa Indonesia di Sekolah Dasar.</p>
+      <div class="pengantar-ttd">Hormat kami,<br><strong>Kelompok 1</strong></div>
+    </div>
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(0,-1)">← Daftar Isi</button>
+      <span class="page-indicator">Halaman 2 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(2,1)">📝 Pendahuluan &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== PENDAHULUAN ===== -->
+  <div class="section" id="sec-2">
+    <div class="sec-header">
+      <!-- maskot SVG kecil -->
+      <div class="maskot-wrap">
+        <svg class="maskot-char" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="45" cy="45" r="38" fill="#d4eddf"/>
+          <rect x="20" y="22" width="50" height="46" rx="7" fill="#3d9970"/>
+          <rect x="23" y="22" width="6" height="46" rx="3" fill="#2e7d5e"/>
+          <rect x="31" y="30" width="34" height="30" rx="4" fill="#fff" opacity=".95"/>
+          <line x1="36" y1="38" x2="59" y2="38" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+          <line x1="36" y1="44" x2="59" y2="44" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+          <line x1="36" y1="50" x2="52" y2="50" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="70" r="3" fill="#2c3e50"/>
+          <circle cx="52" cy="70" r="3" fill="#2c3e50"/>
+          <path d="M36 77 Q45 83 54 77" stroke="#2c3e50" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="sec-icon" style="font-size:2rem;margin-bottom:4px">📝</span>
+      <h2>Pendahuluan</h2>
+      <p>Mari kita kenali kalimat transitif dan intransitif!</p>
+    </div>
+    <div class="reward-banner" id="rb-2"><span class="reward-stars">⭐⭐⭐</span><p>Kamu membuka Pendahuluan! +1 bintang 🎉</p></div>
+    <div class="card">
+      <div class="card-title" style="color:var(--biru-tua)">🌟 Apa itu Kalimat?</div>
+      <p>Kalimat adalah rangkaian kata yang mengungkapkan pikiran atau perasaan secara lengkap. Dalam bahasa Indonesia, ada banyak jenis kalimat — salah satunya berdasarkan ada atau tidaknya <strong>objek</strong> dalam kalimat tersebut.</p>
+      <p>Dua jenis kalimat yang akan kita pelajari adalah <strong style="color:var(--hijau-tua)">kalimat transitif</strong> dan <strong style="color:var(--biru-tua)">kalimat intransitif</strong>. Memahami keduanya akan membantumu menulis dan berbicara dengan lebih baik dan benar! 😊</p>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--hijau-tua)">🎯 Tujuan Pembelajaran</div>
+      <div class="tujuan-box">
+        <h3>Setelah mempelajari materi ini, diharapkan siswa dapat:</h3>
+        <p>✅ Membedakan antara kalimat transitif dan kalimat intransitif, serta menggunakannya dengan tepat dalam tulisan dan percakapan sehari-hari.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--kuning-tua)">📌 Petunjuk Penggunaan</div>
+      <ul class="petunjuk-list">
+        <li><span class="p-icon">🔵</span><span>Gunakan tombol navigasi di atas untuk berpindah antar halaman.</span></li>
+        <li><span class="p-icon">🟢</span><span>Baca setiap materi dengan seksama dan perhatikan contoh-contoh berwarna yang diberikan.</span></li>
+        <li><span class="p-icon">🔄</span><span>Gunakan tombol <strong>"→ Halaman Berikutnya"</strong> di bawah untuk melanjutkan secara berurutan.</span></li>
+        <li><span class="p-icon">✅</span><span>Tanda <strong>centang hijau ✓</strong> muncul di tombol nav dan daftar isi setelah halaman dibuka.</span></li>
+        <li><span class="p-icon">⭐</span><span>Kumpulkan bintang dengan membuka setiap halaman — pantau di pojok kanan atas!</span></li>
+        <li><span class="p-icon">🏠</span><span>Klik logo <strong>"📖 Bahan Ajar"</strong> di kiri atas untuk kembali ke halaman cover.</span></li>
+      </ul>
+    </div>
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(1,-1)">← Kata Pengantar</button>
+      <span class="page-indicator">Halaman 3 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(3,1)">📚 Materi &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== MATERI ===== -->
+  <div class="section" id="sec-3">
+    <div class="sec-header">
+      <span class="sec-icon">📚</span>
+      <h2>Materi Pembelajaran</h2>
+      <p>Pilih tab di bawah untuk mempelajari masing-masing jenis kalimat</p>
+    </div>
+    <div class="reward-banner" id="rb-3"><span class="reward-stars">⭐⭐⭐⭐</span><p>Kamu membuka halaman Materi! +1 bintang 🎉</p></div>
+
+    <div class="tab-nav">
+      <button class="tab-btn tb-t on tab-done" id="tbt-t" onclick="showTab('tt',this,'t')">🟢 Kalimat Transitif<span class="tab-check">✓</span></button>
+      <button class="tab-btn tb-i"    id="tbt-i" onclick="showTab('ti',this,'i')">🔵 Kalimat Intransitif<span class="tab-check">✓</span></button>
+      <button class="tab-btn tb-p"    id="tbt-p" onclick="showTab('tp',this,'p')">🔄 Perbandingan<span class="tab-check">✓</span></button>
+    </div>
+
+    <!-- TAB TRANSITIF -->
+    <div id="tt" class="tab-panel on">
+      <div class="card">
+        <div class="maskot-wrap">
+          <svg class="maskot-char" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="45" cy="45" r="38" fill="#d5f5e3"/>
+            <rect x="20" y="22" width="50" height="46" rx="7" fill="#27ae60"/>
+            <rect x="23" y="22" width="6" height="46" rx="3" fill="#1e8449"/>
+            <rect x="31" y="30" width="34" height="30" rx="4" fill="#fff" opacity=".95"/>
+            <text x="33" y="50" font-size="18" fill="#27ae60">O</text>
+            <circle cx="38" cy="70" r="3" fill="#2c3e50"/><circle cx="52" cy="70" r="3" fill="#2c3e50"/>
+            <path d="M36 77 Q45 83 54 77" stroke="#2c3e50" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="58" y="28" font-size="12" fill="#f1c40f">✓</text>
+          </svg>
+        </div>
+        <div class="def-box def-t">
+          <h3>🟢 Apa itu Kalimat Transitif?</h3>
+          <p><strong>Kalimat transitif</strong> adalah kalimat yang predikatnya (kata kerja) <strong>memerlukan objek</strong> untuk melengkapi maknanya. Tanpa objek, kalimat menjadi tidak lengkap dan terasa menggantung.</p>
+        </div>
+        <p class="sub-sec-title" style="color:var(--hijau-tua)">📌 Ciri-ciri Kalimat Transitif</p>
+        <div class="ciri-grid">
+          <div class="ciri-card ciri-t"><span class="ciri-icon">🔡</span><span>Memiliki objek setelah predikat</span></div>
+          <div class="ciri-card ciri-t"><span class="ciri-icon">🔄</span><span>Dapat diubah menjadi kalimat pasif</span></div>
+          <div class="ciri-card ciri-t"><span class="ciri-icon">📝</span><span>Predikat berupa kata kerja aktif (me-)</span></div>
+          <div class="ciri-card ciri-t"><span class="ciri-icon">❓</span><span>Bisa ditanya "apa?" / "siapa?" setelah predikat</span></div>
+        </div>
+        <p class="sub-sec-title" style="color:var(--hijau-tua)">🎨 Keterangan Warna</p>
+        <div class="legend"><span class="leg leg-s">S = Subjek</span><span class="leg leg-p">P = Predikat</span><span class="leg leg-o">O = Objek</span><span class="leg leg-k">K = Keterangan</span></div>
+        <p class="sub-sec-title" style="color:var(--hijau-tua)">💡 Contoh Kalimat Transitif</p>
+        <div class="contoh-wrap">
+          <div class="contoh-item"><div class="k-kalimat"><span class="hs">Budi</span> <span class="hp">memakan</span> <span class="ho">nasi goreng</span>.</div><div class="k-analisis">📌 S: Budi | P: memakan | O: nasi goreng &nbsp;✅ Pasif → "Nasi goreng dimakan Budi."</div></div>
+          <div class="contoh-item"><div class="k-kalimat"><span class="hs">Ibu</span> <span class="hp">membeli</span> <span class="ho">sayur bayam</span> <span class="hk">di pasar</span>.</div><div class="k-analisis">📌 S: Ibu | P: membeli | O: sayur bayam | K: di pasar &nbsp;✅ Pasif → "Sayur bayam dibeli Ibu."</div></div>
+          <div class="contoh-item"><div class="k-kalimat"><span class="hs">Ani</span> <span class="hp">membaca</span> <span class="ho">buku cerita</span> <span class="hk">setiap malam</span>.</div><div class="k-analisis">📌 S: Ani | P: membaca | O: buku cerita | K: setiap malam &nbsp;✅ Pasif → "Buku cerita dibaca Ani."</div></div>
+          <div class="contoh-item"><div class="k-kalimat"><span class="hs">Ayah</span> <span class="hp">mencuci</span> <span class="ho">mobil</span> <span class="hk">setiap minggu</span>.</div><div class="k-analisis">📌 S: Ayah | P: mencuci | O: mobil | K: setiap minggu &nbsp;✅ Pasif → "Mobil dicuci Ayah."</div></div>
+          <div class="contoh-item"><div class="k-kalimat"><span class="hs">Dinda</span> <span class="hp">menggambar</span> <span class="ho">pemandangan</span> <span class="hk">dengan pensil</span>.</div><div class="k-analisis">📌 S: Dinda | P: menggambar | O: pemandangan | K: dengan pensil &nbsp;✅ Pasif → "Pemandangan digambar Dinda."</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB INTRANSITIF -->
+    <div id="ti" class="tab-panel">
+      <div class="card">
+        <div class="maskot-wrap">
+          <svg class="maskot-char" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="45" cy="45" r="38" fill="#d3e4f0"/>
+            <rect x="20" y="22" width="50" height="46" rx="7" fill="#4a86b8"/>
+            <rect x="23" y="22" width="6" height="46" rx="3" fill="#3a6d96"/>
+            <rect x="31" y="30" width="34" height="30" rx="4" fill="#fff" opacity=".95"/>
+            <line x1="36" y1="38" x2="59" y2="38" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+            <line x1="36" y1="44" x2="59" y2="44" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+            <line x1="36" y1="50" x2="52" y2="50" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="70" r="3" fill="#2c3e50"/><circle cx="52" cy="70" r="3" fill="#2c3e50"/>
+            <path d="M38 78 Q45 73 52 78" stroke="#2c3e50" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="56" y="28" font-size="13" fill="#c0574a">✕</text>
+          </svg>
+        </div>
+        <div class="def-box def-i">
+          <h3>🔵 Apa itu Kalimat Intransitif?</h3>
+          <p><strong>Kalimat intransitif</strong> adalah kalimat yang predikatnya (kata kerja) <strong>tidak memerlukan objek</strong>. Kalimat ini sudah terasa lengkap hanya dengan subjek dan predikat, meskipun bisa ditambah keterangan.</p>
+        </div>
+        <p class="sub-sec-title" style="color:var(--biru-tua)">📌 Ciri-ciri Kalimat Intransitif</p>
+        <div class="ciri-grid">
+          <div class="ciri-card ciri-i"><span class="ciri-icon">🚫</span><span>Tidak memiliki objek</span></div>
+          <div class="ciri-card ciri-i"><span class="ciri-icon">❌</span><span>Tidak dapat diubah menjadi kalimat pasif</span></div>
+          <div class="ciri-card ciri-i"><span class="ciri-icon">📝</span><span>Predikat kata kerja intransitif (ber-, ter-)</span></div>
+          <div class="ciri-card ciri-i"><span class="ciri-icon">✅</span><span>Sudah bermakna lengkap tanpa objek</span></div>
+        </div>
+        <p class="sub-sec-title" style="color:var(--biru-tua)">🎨 Keterangan Warna</p>
+        <div class="legend"><span class="leg leg-s">S = Subjek</span><span class="leg leg-p">P = Predikat</span><span class="leg leg-k">K = Keterangan</span></div>
+        <p class="sub-sec-title" style="color:var(--biru-tua)">💡 Contoh Kalimat Intransitif</p>
+        <div class="contoh-wrap">
+          <div class="contoh-item ci"><div class="k-kalimat"><span class="hs">Adik</span> <span class="hp">tidur</span> <span class="hk">di kamar</span>.</div><div class="k-analisis">📌 S: Adik | P: tidur | K: di kamar &nbsp;❌ Tidak bisa dipasifkan — "tidur" tidak punya objek.</div></div>
+          <div class="contoh-item ci"><div class="k-kalimat"><span class="hs">Burung</span> <span class="hp">terbang</span> <span class="hk">di langit biru</span>.</div><div class="k-analisis">📌 S: Burung | P: terbang | K: di langit biru &nbsp;❌ "di langit biru" adalah keterangan, bukan objek.</div></div>
+          <div class="contoh-item ci"><div class="k-kalimat"><span class="hs">Nenek</span> <span class="hp">tersenyum</span> <span class="hk">dengan manis</span>.</div><div class="k-analisis">📌 S: Nenek | P: tersenyum | K: dengan manis &nbsp;❌ "tersenyum" tidak memerlukan objek.</div></div>
+          <div class="contoh-item ci"><div class="k-kalimat"><span class="hs">Anak-anak</span> <span class="hp">berlari</span> <span class="hk">di lapangan</span>.</div><div class="k-analisis">📌 S: Anak-anak | P: berlari | K: di lapangan &nbsp;❌ "berlari" tidak memerlukan objek.</div></div>
+          <div class="contoh-item ci"><div class="k-kalimat"><span class="hs">Kucing itu</span> <span class="hp">menangis</span> <span class="hk">semalaman</span>.</div><div class="k-analisis">📌 S: Kucing itu | P: menangis | K: semalaman &nbsp;❌ "menangis" tidak memerlukan objek.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB PERBANDINGAN -->
+    <div id="tp" class="tab-panel">
+      <div class="card">
+        <div class="maskot-wrap">
+          <svg class="maskot-char" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="45" cy="45" r="38" fill="#faf0dc"/>
+            <!-- buku kiri hijau -->
+            <rect x="10" y="26" width="32" height="38" rx="5" fill="#3d9970"/>
+            <rect x="13" y="26" width="5" height="38" rx="2.5" fill="#2e7d5e"/>
+            <rect x="19" y="32" width="20" height="26" rx="3" fill="#fff" opacity=".9"/>
+            <text x="22" y="50" font-size="11" fill="#3d9970" font-weight="bold">T</text>
+            <!-- buku kanan biru -->
+            <rect x="48" y="26" width="32" height="38" rx="5" fill="#4a86b8"/>
+            <rect x="51" y="26" width="5" height="38" rx="2.5" fill="#3a6d96"/>
+            <rect x="57" y="32" width="20" height="26" rx="3" fill="#fff" opacity=".9"/>
+            <text x="60" y="50" font-size="11" fill="#4a86b8" font-weight="bold">I</text>
+            <!-- tanda panah tengah -->
+            <text x="36" y="49" font-size="14" fill="#a87028">⇄</text>
+            <!-- mata & senyum di bawah -->
+            <circle cx="33" cy="72" r="3" fill="#2c3e50"/>
+            <circle cx="57" cy="72" r="3" fill="#2c3e50"/>
+            <path d="M30 79 Q45 87 60 79" stroke="#2c3e50" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-title" style="color:var(--kuning-tua)">🔄 Perbandingan Transitif &amp; Intransitif</div>
+        <div class="tbl-scroll">
+          <table class="perb-tbl">
+            <thead><tr><th>Aspek</th><th>🟢 Transitif</th><th>🔵 Intransitif</th></tr></thead>
+            <tbody>
+              <tr><td>Objek</td><td>✅ Memiliki objek</td><td>❌ Tidak ada objek</td></tr>
+              <tr><td>Kalimat Pasif</td><td>✅ Dapat dipasifkan</td><td>❌ Tidak dapat dipasifkan</td></tr>
+              <tr><td>Contoh Kata Kerja</td><td>memakan, membeli, membaca, menulis, menendang</td><td>tidur, berlari, terbang, tersenyum, menangis</td></tr>
+              <tr><td>Kelengkapan Makna</td><td>Tidak lengkap tanpa objek</td><td>Sudah lengkap tanpa objek</td></tr>
+              <tr><td>Uji Pertanyaan</td><td>"Memakan <em>apa</em>?" → ada jawaban</td><td>"Tidur <em>apa</em>?" → tidak ada jawaban</td></tr>
+              <tr><td>Contoh Kalimat</td><td>Budi memakan <u>nasi goreng</u>.</td><td>Budi tidur.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tips-box">
+          <h4>💡 Tips Jitu Membedakan</h4>
+          <p>Setelah membaca kalimat, tanyakan: <strong>"[kata kerja] + apa / siapa?"</strong><br>
+          ✅ Ada jawaban yang masuk akal → <strong style="color:var(--hijau-tua)">Transitif</strong><br>
+          ❌ Tidak ada jawaban → <strong style="color:var(--biru-tua)">Intransitif</strong><br><br>
+          🔍 <em>"Ibu membaca..."</em> → "membaca <strong>apa</strong>?" → buku ✅ = <strong style="color:var(--hijau-tua)">Transitif</strong><br>
+          🔍 <em>"Ayah berlari..."</em> → "berlari <strong>apa</strong>?" → ❌ = <strong style="color:var(--biru-tua)">Intransitif</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(2,-1)">← Pendahuluan</button>
+      <span class="page-indicator">Halaman 4 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(4,1)">📌 Rangkuman &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== RANGKUMAN ===== -->
+  <div class="section" id="sec-4">
+    <div class="sec-header">
+      <span class="sec-icon">📌</span>
+      <h2>Rangkuman Materi</h2>
+      <p>Yuk ingat kembali apa yang sudah kita pelajari!</p>
+    </div>
+    <div class="maskot-wrap" style="margin-bottom:0">
+      <svg class="maskot-char" style="width:100px;height:100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="44" fill="#faf0dc"/>
+        <!-- buku -->
+        <rect x="18" y="24" width="64" height="52" rx="8" fill="#a87028"/>
+        <rect x="22" y="24" width="8" height="52" rx="4" fill="#8a5a20"/>
+        <rect x="32" y="32" width="44" height="36" rx="5" fill="#fff" opacity=".95"/>
+        <!-- bintang -->
+        <text x="34" y="56" font-size="22" fill="#c8973a">★</text>
+        <!-- tanda centang -->
+        <text x="54" y="56" font-size="18" fill="#3d9970">✓</text>
+        <!-- mata -->
+        <circle cx="40" cy="82" r="3.5" fill="#2d3748"/>
+        <circle cx="60" cy="82" r="3.5" fill="#2d3748"/>
+        <circle cx="41.5" cy="80.5" r="1.4" fill="#fff"/>
+        <circle cx="61.5" cy="80.5" r="1.4" fill="#fff"/>
+        <!-- senyum lebar -->
+        <path d="M37 90 Q50 100 63 90" stroke="#2d3748" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- tangan -->
+        <ellipse cx="10" cy="64" rx="8" ry="5" fill="#a87028" transform="rotate(-25,10,64)"/>
+        <ellipse cx="90" cy="64" rx="8" ry="5" fill="#a87028" transform="rotate(25,90,64)"/>
+      </svg>
+    </div>
+    <div class="reward-banner" id="rb-4"><span class="reward-stars">⭐⭐⭐⭐⭐</span><p>Kamu membuka Rangkuman! Hampir selesai +1 bintang 🎉</p></div>
+    <div class="rangkuman-grid">
+      <div class="rangkuman-card rk-t"><h3>🟢 Kalimat Transitif</h3><ul><li>Predikat memerlukan objek</li><li>Ada objek dalam kalimat</li><li>Dapat diubah ke bentuk pasif</li><li>Tanya "apa/siapa?" setelah predikat → ada jawaban</li><li>Contoh: memakan, membeli, membaca, menulis</li></ul></div>
+      <div class="rangkuman-card rk-i"><h3>🔵 Kalimat Intransitif</h3><ul><li>Predikat tidak memerlukan objek</li><li>Tidak ada objek dalam kalimat</li><li>Tidak dapat diubah ke bentuk pasif</li><li>Tanya "apa/siapa?" setelah predikat → tidak ada jawaban</li><li>Contoh: tidur, berlari, terbang, tersenyum</li></ul></div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--kuning-tua)">🔍 Contoh Perbandingan Langsung</div>
+      <div class="contoh-wrap">
+        <div class="contoh-item"><div class="k-kalimat">🟢 <span class="hs">Ibu</span> <span class="hp">memasak</span> <span class="ho">nasi goreng</span>. <span style="font-size:.78rem;color:var(--hijau-tua);font-weight:700">[TRANSITIF — ada objek]</span></div></div>
+        <div class="contoh-item ci"><div class="k-kalimat">🔵 <span class="hs">Ibu</span> <span class="hp">memasak</span>. <span style="font-size:.78rem;color:var(--biru-tua);font-weight:700">[INTRANSITIF — tidak ada objek]</span></div></div>
+      </div>
+      <div style="margin-top:14px;padding:14px 16px;background:var(--abu-muda);border-radius:var(--rs);font-size:.88rem;line-height:1.7;color:#444">
+        💬 <strong>Catatan:</strong> Kata kerja yang sama bisa bersifat transitif JIKA ada objek, atau intransitif JIKA tidak ada objek. Yang menentukan adalah ada tidaknya <strong>objek</strong>!
+      </div>
+    </div>
+    <div class="ingat-box">
+      <span class="ingat-icon">🧠</span>
+      <div>
+        <h4>Ingat Rumus Mudah!</h4>
+        <p><strong style="color:var(--hijau-tua)">Transitif</strong> = ada <u>O</u>bjek → bisa di-<u>P</u>asifkan<br>
+        <strong style="color:var(--biru-tua)">Intransitif</strong> = <u>T</u>anpa objek → <u>T</u>idak bisa dipasifkan<br><br>
+        Cara uji: <em>Predikat + apa/siapa?</em><br>
+        Ada jawaban → <strong style="color:var(--hijau-tua)">Transitif</strong> &nbsp;|&nbsp; Tidak ada → <strong style="color:var(--biru-tua)">Intransitif</strong></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--ungu)">📖 Daftar Referensi Kata Kerja</div>
+      <p style="font-size:.9rem;color:var(--teks-abu);margin-bottom:4px">Kumpulan kata kerja yang sering digunakan sebagai referensi cepat:</p>
+      <div class="kk-grid">
+        <div class="kk-card kk-t"><h4>🟢 Kata Kerja Transitif</h4><div class="kk-tags"><span class="kk-tag">memakan</span><span class="kk-tag">membeli</span><span class="kk-tag">membaca</span><span class="kk-tag">menulis</span><span class="kk-tag">menendang</span><span class="kk-tag">memasak</span><span class="kk-tag">mengajar</span><span class="kk-tag">mencuci</span><span class="kk-tag">menggambar</span><span class="kk-tag">membawa</span><span class="kk-tag">melihat</span><span class="kk-tag">mendengar</span><span class="kk-tag">memukul</span><span class="kk-tag">menjual</span><span class="kk-tag">membuat</span><span class="kk-tag">mengambil</span><span class="kk-tag">menyiram</span><span class="kk-tag">membangun</span></div></div>
+        <div class="kk-card kk-i"><h4>🔵 Kata Kerja Intransitif</h4><div class="kk-tags"><span class="kk-tag">tidur</span><span class="kk-tag">berlari</span><span class="kk-tag">terbang</span><span class="kk-tag">tersenyum</span><span class="kk-tag">menangis</span><span class="kk-tag">bermain</span><span class="kk-tag">berjalan</span><span class="kk-tag">berenang</span><span class="kk-tag">tertawa</span><span class="kk-tag">duduk</span><span class="kk-tag">berdiri</span><span class="kk-tag">berteriak</span><span class="kk-tag">bernyanyi</span><span class="kk-tag">berlomba</span><span class="kk-tag">pergi</span><span class="kk-tag">datang</span><span class="kk-tag">bersinar</span><span class="kk-tag">jatuh</span></div></div>
+      </div>
+      <div class="kk-catatan">💡 <strong>Catatan:</strong> Beberapa kata kerja seperti <em>memasak, minum, makan</em> bisa bersifat transitif (ada objek) atau intransitif (tidak ada objek). Yang menentukan adalah ada tidaknya objek dalam kalimat!</div>
+    </div>
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(3,-1)">← Materi</button>
+      <span class="page-indicator">Halaman 5 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(5,1)">📊 Rubrik &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== RUBRIK ===== -->
+  <div class="section" id="sec-5">
+    <div class="sec-header">
+      <!-- maskot rubrik: buku dengan clipboard -->
+      <div class="maskot-wrap">
+        <svg class="maskot-char" style="width:100px;height:100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" fill="#f4ecf7"/>
+          <rect x="20" y="22" width="60" height="56" rx="8" fill="#8e44ad"/>
+          <rect x="24" y="22" width="8" height="56" rx="4" fill="#6c3483"/>
+          <rect x="34" y="30" width="40" height="40" rx="5" fill="#fff" opacity=".95"/>
+          <!-- clipboard lines -->
+          <line x1="39" y1="40" x2="69" y2="40" stroke="#c8a2d8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="39" y1="48" x2="69" y2="48" stroke="#c8a2d8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="39" y1="56" x2="56" y2="56" stroke="#c8a2d8" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- centang besar -->
+          <text x="54" y="60" font-size="14" fill="#8e44ad">✓</text>
+          <!-- mata -->
+          <circle cx="40" cy="82" r="3.5" fill="#2c3e50"/>
+          <circle cx="60" cy="82" r="3.5" fill="#2c3e50"/>
+          <circle cx="41.5" cy="80.5" r="1.3" fill="#fff"/>
+          <circle cx="61.5" cy="80.5" r="1.3" fill="#fff"/>
+          <!-- senyum -->
+          <path d="M37 90 Q50 99 63 90" stroke="#2c3e50" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="sec-icon" style="font-size:2rem;margin-bottom:4px">📊</span>
+      <h2>Rubrik Penilaian</h2>
+      <p>Panduan penilaian untuk guru dalam mengevaluasi pemahaman siswa</p>
+    </div>
+    <div class="reward-banner" id="rb-5"><span class="reward-stars">⭐⭐⭐⭐⭐⭐</span><p>Luar biasa! Semua halaman terbuka! Bintang penuh! 🏆</p></div>
+
+    <!-- indikator tab materi -->
+    <div style="background:var(--putih);border-radius:var(--rs);padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow-sm);border:1.5px solid var(--abu);display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <span style="font-family:'Fredoka One',cursive;font-size:.9rem;color:var(--teks-abu)">📚 Tab Materi:</span>
+      <span id="tab-ind-t" style="font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;background:#f0f0f0;color:#aaa">🟢 Transitif</span>
+      <span id="tab-ind-i" style="font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;background:#f0f0f0;color:#aaa">🔵 Intransitif</span>
+      <span id="tab-ind-p" style="font-size:.82rem;font-weight:700;padding:4px 12px;border-radius:12px;background:#f0f0f0;color:#aaa">🔄 Perbandingan</span>
+      <span id="tab-ind-info" style="font-size:.8rem;color:var(--teks-abu);margin-left:auto"></span>
+    </div>
+
+    <button class="btn-cetak" onclick="bukaRubrikBaru()">🖨️ Buka Rubrik untuk Dicetak</button>
+
+    <div id="print-area" class="card">
+
+      <!-- RUBRIK 1 -->
+      <p class="sub-sec-title" style="color:var(--ungu)">📝 1. Rubrik Penilaian Pemahaman Konsep</p>
+      <!-- Desktop tabel -->
+      <div class="rubrik-tbl-wrap">
+        <table class="rubrik-tbl">
+          <thead>
+            <tr class="head-row"><th>Aspek yang Dinilai</th><th>Skor 4</th><th>Skor 3</th><th>Skor 2</th><th>Skor 1</th></tr>
+            <tr class="sub-row"><th>—</th><th>Sangat Baik</th><th>Baik</th><th>Cukup</th><th>Perlu Bimbingan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mendefinisikan kalimat transitif</td><td>Tepat dan lengkap</td><td>Tepat namun kurang lengkap</td><td>Sebagian benar</td><td>Belum dapat mendefinisikan</td></tr>
+            <tr><td>Mendefinisikan kalimat intransitif</td><td>Tepat dan lengkap</td><td>Tepat namun kurang lengkap</td><td>Sebagian benar</td><td>Belum dapat mendefinisikan</td></tr>
+            <tr><td>Membedakan kedua jenis kalimat</td><td>Benar disertai alasan tepat</td><td>Benar tanpa alasan</td><td>Sebagian besar benar</td><td>Belum mampu membedakan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Mobile kartu -->
+      <div class="rubrik-kartu-wrap">
+        <div class="rubrik-kartu"><div class="rk-aspek">Mendefinisikan kalimat transitif</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Tepat dan lengkap</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Tepat namun kurang lengkap</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Sebagian benar</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Belum dapat mendefinisikan</span></div></div>
+        <div class="rubrik-kartu"><div class="rk-aspek">Mendefinisikan kalimat intransitif</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Tepat dan lengkap</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Tepat namun kurang lengkap</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Sebagian benar</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Belum dapat mendefinisikan</span></div></div>
+        <div class="rubrik-kartu"><div class="rk-aspek">Membedakan kedua jenis kalimat</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Benar disertai alasan tepat</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Benar tanpa alasan</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Sebagian besar benar</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Belum mampu membedakan</span></div></div>
+      </div>
+
+      <!-- RUBRIK 2 -->
+      <p class="sub-sec-title" style="color:var(--ungu)">✍️ 2. Rubrik Penilaian Penggunaan Kalimat</p>
+      <div class="rubrik-tbl-wrap">
+        <table class="rubrik-tbl">
+          <thead>
+            <tr class="head-row"><th>Aspek yang Dinilai</th><th>Skor 4</th><th>Skor 3</th><th>Skor 2</th><th>Skor 1</th></tr>
+            <tr class="sub-row"><th>—</th><th>Sangat Baik</th><th>Baik</th><th>Cukup</th><th>Perlu Bimbingan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Membuat kalimat transitif</td><td>Tepat, ada S-P-O, struktur benar</td><td>Benar, struktur kurang tepat</td><td>Ada objek, kalimat kurang logis</td><td>Salah / tidak ada objek</td></tr>
+            <tr><td>Membuat kalimat intransitif</td><td>Tepat, S-P, tidak ada objek, bermakna</td><td>Benar tapi ada kelebihan unsur</td><td>Kurang tepat jenisnya</td><td>Salah jenis / tidak bermakna</td></tr>
+            <tr><td>Ketepatan kata kerja</td><td>Semua tepat sesuai jenis</td><td>Sebagian besar tepat</td><td>Sebagian kecil tepat</td><td>Belum tepat</td></tr>
+            <tr><td>Kreativitas kalimat</td><td>Variatif, menarik, sesuai konteks</td><td>Sederhana tapi sesuai</td><td>Terlalu singkat</td><td>Tidak bermakna</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rubrik-kartu-wrap">
+        <div class="rubrik-kartu"><div class="rk-aspek">Membuat kalimat transitif</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Tepat, ada S-P-O, struktur benar</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Benar, struktur kurang tepat</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Ada objek, kalimat kurang logis</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Salah / tidak ada objek</span></div></div>
+        <div class="rubrik-kartu"><div class="rk-aspek">Membuat kalimat intransitif</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Tepat, S-P, tidak ada objek, bermakna</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Benar tapi ada kelebihan unsur</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Kurang tepat jenisnya</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Salah jenis / tidak bermakna</span></div></div>
+        <div class="rubrik-kartu"><div class="rk-aspek">Ketepatan kata kerja</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Semua tepat sesuai jenis</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Sebagian besar tepat</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Sebagian kecil tepat</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Belum tepat</span></div></div>
+        <div class="rubrik-kartu"><div class="rk-aspek">Kreativitas kalimat</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">Variatif, menarik, sesuai konteks</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">Sederhana tapi sesuai</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">Terlalu singkat</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">Tidak bermakna</span></div></div>
+      </div>
+
+      <!-- RUBRIK 3 -->
+      <p class="sub-sec-title" style="color:var(--ungu)">🎯 3. Rubrik Penilaian Latihan Soal (Media Cetak)</p>
+      <div class="rubrik-tbl-wrap">
+        <table class="rubrik-tbl t3">
+          <thead>
+            <tr class="head-row"><th>Jumlah Jawaban Benar</th><th>Skor</th><th>Keterangan</th></tr>
+            <tr class="sub-row"><th>Rentang Jawaban</th><th>Nilai</th><th>Deskripsi Pencapaian</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>9 – 10 soal benar</td><td><span class="sb4">Skor 4</span></td><td>Sangat Baik — memahami materi dengan sangat baik</td></tr>
+            <tr><td>7 – 8 soal benar</td><td><span class="sb3">Skor 3</span></td><td>Baik — memahami sebagian besar materi</td></tr>
+            <tr><td>5 – 6 soal benar</td><td><span class="sb2">Skor 2</span></td><td>Cukup — perlu mengulang materi kembali</td></tr>
+            <tr><td>&lt; 5 soal benar</td><td><span class="sb1">Skor 1</span></td><td>Perlu Bimbingan — perlu pendampingan guru</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rubrik-kartu-wrap">
+        <div class="rubrik-kartu"><div class="rk-aspek">Latihan Soal Media Cetak</div><div class="rk-row"><span class="rk-label rk-l4">Skor 4</span><span class="rk-isi">9–10 benar — Sangat Baik</span></div><div class="rk-row"><span class="rk-label rk-l3">Skor 3</span><span class="rk-isi">7–8 benar — Baik</span></div><div class="rk-row"><span class="rk-label rk-l2">Skor 2</span><span class="rk-isi">5–6 benar — Cukup</span></div><div class="rk-row"><span class="rk-label rk-l1">Skor 1</span><span class="rk-isi">&lt;5 benar — Perlu Bimbingan</span></div></div>
+      </div>
+
+      <!-- NILAI AKHIR -->
+      <div class="nilai-box">
+        <h3>🧮 Cara Menghitung Nilai Akhir</h3>
+        <p>Nilai akhir dihitung berdasarkan total skor yang diperoleh dari semua aspek penilaian:</p>
+        <div class="rumus">Nilai Akhir = (Total Skor Perolehan ÷ Total Skor Maksimal) × 100</div>
+        <p>Tabel Predikat Nilai Siswa:</p>
+        <div class="pred-tbl-wrap">
+          <table class="pred-tbl">
+            <thead><tr><th>Rentang Nilai</th><th>Predikat</th><th>Keterangan</th></tr></thead>
+            <tbody>
+              <tr><td class="p-a">90 – 100</td><td class="p-a">A</td><td class="p-a">Sangat Baik</td></tr>
+              <tr><td class="p-b">75 – 89</td><td class="p-b">B</td><td class="p-b">Baik</td></tr>
+              <tr><td class="p-c">60 – 74</td><td class="p-c">C</td><td class="p-c">Cukup</td></tr>
+              <tr><td class="p-d">0 – 59</td><td class="p-d">D</td><td class="p-d">Perlu Bimbingan</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- end print-area -->
+
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(4,-1)">← Rangkuman</button>
+      <span class="page-indicator">Halaman 6 dari 7</span>
+      <button class="btn-nav next" onclick="gotoSec(6,1)" style="background:linear-gradient(135deg,var(--kuning-tua),var(--merah))">🎉 Selesai! &nbsp;→</button>
+    </div>
+  </div>
+
+  <!-- ===== PENUTUP ===== -->
+  <div class="section" id="sec-6">
+    <div class="reward-banner" id="rb-6"><span class="reward-stars">🏆</span><p>Selamat! Kamu telah menyelesaikan semua halaman! 🎉</p></div>
+
+    <div class="sec-header">
+      <div class="maskot-wrap">
+        <svg class="maskot-char" style="width:110px;height:110px;animation:bounce 1.8s infinite" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="55" cy="55" r="50" fill="#faf0dc"/>
+          <!-- buku besar -->
+          <rect x="18" y="25" width="74" height="60" rx="10" fill="#a87028"/>
+          <rect x="23" y="25" width="10" height="60" rx="5" fill="#8a5a20"/>
+          <rect x="35" y="33" width="50" height="44" rx="6" fill="#fff" opacity=".95"/>
+          <!-- bintang -->
+          <text x="38" y="60" font-size="28" fill="#c8973a">★</text>
+          <!-- A besar -->
+          <text x="62" y="62" font-size="22" fill="#3d9970" font-weight="bold">A</text>
+          <!-- mahkota -->
+          <polygon points="30,22 38,10 46,18 55,6 64,18 72,10 80,22" fill="#c8973a" stroke="#a87028" stroke-width="1.5"/>
+          <!-- mata -->
+          <circle cx="44" cy="90" r="4" fill="#2d3748"/>
+          <circle cx="66" cy="90" r="4" fill="#2d3748"/>
+          <circle cx="45.5" cy="88.5" r="1.6" fill="#fff"/>
+          <circle cx="67.5" cy="88.5" r="1.6" fill="#fff"/>
+          <!-- senyum lebar -->
+          <path d="M40 100 Q55 112 70 100" stroke="#2d3748" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- tangan -->
+          <ellipse cx="8"  cy="72" rx="9" ry="6" fill="#a87028" transform="rotate(-25,8,72)"/>
+          <ellipse cx="102" cy="72" rx="9" ry="6" fill="#a87028" transform="rotate(25,102,72)"/>
+        </svg>
+      </div>
+      <span class="sec-icon" style="font-size:2rem;margin-bottom:4px">🎉</span>
+      <h2>Selamat!</h2>
+      <p>Kamu telah menyelesaikan seluruh bahan ajar ini</p>
+    </div>
+
+    <div class="card" style="text-align:center;background:linear-gradient(135deg,#faf0dc,#d4eddf,#d3e4f0)">
+      <div style="font-size:3.5rem;margin-bottom:16px">🏆</div>
+      <h3 style="font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--kuning-tua);margin-bottom:10px">Hebat Sekali! 🌟</h3>
+      <p style="font-size:1rem;color:#555;line-height:1.8;margin-bottom:18px">
+        Kamu sudah belajar tentang <strong style="color:var(--hijau-tua)">kalimat transitif</strong> dan <strong style="color:var(--biru-tua)">kalimat intransitif</strong> dengan sangat baik!<br>
+        Sekarang kamu sudah bisa membedakan keduanya dan menggunakannya dalam tulisan sehari-hari. 😊
+      </p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:22px">
+        <div style="background:var(--hijau-muda);border:2px solid var(--hijau);border-radius:14px;padding:14px 20px;min-width:140px">
+          <div style="font-size:1.8rem;margin-bottom:4px">📗</div>
+          <div style="font-family:'Fredoka One',cursive;color:var(--hijau-tua);font-size:.95rem">Kalimat Transitif</div>
+          <div style="font-size:.8rem;color:var(--teks-abu);margin-top:4px">Ada objek ✅</div>
+        </div>
+        <div style="background:var(--biru-muda);border:2px solid var(--biru);border-radius:14px;padding:14px 20px;min-width:140px">
+          <div style="font-size:1.8rem;margin-bottom:4px">📘</div>
+          <div style="font-family:'Fredoka One',cursive;color:var(--biru-tua);font-size:.95rem">Kalimat Intransitif</div>
+          <div style="font-size:.8rem;color:var(--teks-abu);margin-top:4px">Tanpa objek ✅</div>
+        </div>
+      </div>
+      <p style="font-size:.92rem;color:var(--teks-abu);font-style:italic;margin-bottom:20px">
+        "Belajar itu menyenangkan kalau dilakukan dengan semangat! Terus berlatih ya! 💪"
+      </p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+        <button class="btn-nav next" onclick="gotoSec(0,1)" style="background:linear-gradient(135deg,var(--biru),var(--ungu))">📋 Ke Daftar Isi</button>
+        <button class="btn-nav next" onclick="kembaliCover()" style="background:linear-gradient(135deg,var(--hijau),var(--biru))">🏠 Kembali ke Cover</button>
+      </div>
+    </div>
+
+    <div class="page-nav-bottom">
+      <button class="btn-nav prev" onclick="gotoSec(5,-1)">← Rubrik</button>
+      <span class="page-indicator">Halaman 7 dari 7</span>
+      <button class="btn-nav next" onclick="kembaliCover()" style="background:linear-gradient(135deg,var(--kuning-tua),var(--merah))">🏠 Cover</button>
+    </div>
+  </div>
+
+</div><!-- end #app -->
+
+<script>
+/* ============================================================ STATE ============================================================ */
+const TOTAL   = 7;
+const visited = new Array(TOTAL).fill(false);
+const tabDone = {t:true, i:false, p:false};
+let stars  = 0;
+let curSec = 0;
+let prevSec = 0;
+
+/* ============================================================ COVER / APP ============================================================ */
+function bukaApp() {
+  document.getElementById('page-cover').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  gotoSec(0, 1);
+}
+function kembaliCover() {
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('page-cover').style.display = 'flex';
+}
+
+/* ============================================================ NAVIGASI + TRANSISI ============================================================ */
+function gotoSec(idx, dir) {
+  // dir: 1 = maju (slide dari kanan), -1 = mundur (slide dari kiri), 0 = langsung
+  const prev = document.getElementById('sec-' + curSec);
+  const next = document.getElementById('sec-' + idx);
+
+  // tentukan kelas animasi
+  let animClass = 'anim-up';
+  if (dir === 1)  animClass = 'anim-right';
+  if (dir === -1) animClass = 'anim-left';
+
+  // sembunyikan section lama
+  if (prev) prev.classList.remove('aktif');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('aktif'));
+
+  // tampilkan section baru
+  next.classList.remove('anim-right','anim-left','anim-up');
+  next.classList.add('aktif');
+  // trigger reflow lalu tambah animasi
+  void next.offsetWidth;
+  next.classList.add(animClass);
+
+  document.getElementById('nb-' + idx).classList.add('aktif');
+  prevSec = curSec;
+  curSec  = idx;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // progress bar
+  const pct = Math.round(((idx + 1) / TOTAL) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+
+  // reward bintang
+  if (!visited[idx]) {
+    visited[idx] = true;
+    stars++;
+    document.getElementById('star-display').textContent = '⭐ ' + stars;
+
+    // centang tombol nav
+    const nb = document.getElementById('nb-' + idx);
+    if (nb) nb.classList.add('visited');
+
+    // centang daftar isi (idx 1–5 → di-1 s/d di-5)
+    const di = document.getElementById('di-' + idx);
+    if (di) di.classList.add('visited');
+
+    // tampilkan reward banner
+    const rb = document.getElementById('rb-' + idx);
+    if (rb) { rb.classList.add('show'); setTimeout(() => rb.classList.remove('show'), 3500); }
+
+    // cek semua terbuka → trophy (saat semua 7 halaman terbuka)
+    if (stars === TOTAL) {
+      setTimeout(() => tampilTrophy(), 800);
+    }
+  }
+  // update indikator tab saat masuk halaman rubrik
+  if (idx === 5) updateTabInd();
+}
+
+/* ============================================================ TAB MATERI + CENTANG ============================================================ */
+function showTab(id, btn, key) {
+  document.querySelectorAll('.tab-panel').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  if (!tabDone[key]) {
+    tabDone[key] = true;
+    btn.classList.add('tab-done');
+  }
+  updateTabInd();
+}
+
+function updateTabInd() {
+  const keys = ['t','i','p'];
+  const labels = ['🟢 Transitif','🔵 Intransitif','🔄 Perbandingan'];
+  const bgDone  = {t:'#c2ddd0', i:'#bdd4e8', p:'#f0e0c0'};
+  const colDone = {t:'#1d5c40', i:'#234e72', p:'#7a5020'};
+  let done = 0;
+  keys.forEach((k,i) => {
+    const el = document.getElementById('tab-ind-' + k);
+    if (!el) return;
+    if (tabDone[k]) {
+      el.style.background = bgDone[k];
+      el.style.color = colDone[k];
+      el.textContent = labels[i] + ' ✓';
+      done++;
+    }
+  });
+  const info = document.getElementById('tab-ind-info');
+  if (info) info.textContent = done + '/3 tab selesai' + (done===3?' 🎉':'');
+}
+
+/* ============================================================ TROPHY ============================================================ */
+function tampilTrophy() {
+  const modal = document.getElementById('trophy-modal');
+  modal.classList.add('show');
+  const card = document.getElementById('trophy-card');
+  const colors = ['#c8973a','#3d9970','#4a86b8','#c0574a','#7d5fa0'];
+  for (let i = 0; i < 22; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti-dot';
+    dot.style.cssText = `
+      left:${Math.random()*100}%;top:${Math.random()*40}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;
+      border-radius:${Math.random()>.5?'50%':'2px'};
+      animation-delay:${Math.random()*.6}s;
+      animation-duration:${1+Math.random()*.8}s;
+    `;
+    card.appendChild(dot);
+    setTimeout(() => dot.remove(), 2200);
+  }
+}
+function tutupTrophy() {
+  document.getElementById('trophy-modal').classList.remove('show');
+}
+
+/* ============================================================ CETAK RUBRIK ============================================================ */
+function bukaRubrikBaru() {
+  const isi = document.getElementById('print-area').innerHTML;
+  const html = `<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8">
+<title>Rubrik Penilaian – Kalimat Transitif & Intransitif</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Nunito',sans-serif;padding:28px 36px;background:#fff;color:#2d3748}
+h1{font-family:'Fredoka One',cursive;font-size:1.5rem;color:#7d5fa0;margin-bottom:3px}
+.sub{font-size:.88rem;color:#718096;margin-bottom:22px}
+.sub-sec-title{font-family:'Fredoka One',cursive;font-size:.95rem;margin:18px 0 8px;color:#7d5fa0;display:flex;align-items:center;gap:7px}
+.rubrik-tbl-wrap{width:100%;overflow:visible;margin-bottom:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.rubrik-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.rubrik-tbl thead .head-row th{padding:9px 12px;font-family:'Fredoka One',cursive;font-size:.82rem;color:#fff;text-align:center}
+.rubrik-tbl thead .head-row th:first-child{background:#546e7a;text-align:left;width:24%}
+.rubrik-tbl thead .head-row th:nth-child(2){background:#2e7d5e;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(3){background:#3a6d96;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(4){background:#a07028;width:19%}
+.rubrik-tbl thead .head-row th:nth-child(5){background:#8c3028;width:19%}
+.rubrik-tbl thead .sub-row th{padding:5px 12px;font-weight:700;font-size:.73rem;text-align:center}
+.rubrik-tbl thead .sub-row th:first-child{background:#eceff1;color:#455a64;text-align:left}
+.rubrik-tbl thead .sub-row th:nth-child(2){background:#c2ddd0;color:#1d5c40}
+.rubrik-tbl thead .sub-row th:nth-child(3){background:#bdd4e8;color:#234e72}
+.rubrik-tbl thead .sub-row th:nth-child(4){background:#f0e0c0;color:#7a5020}
+.rubrik-tbl thead .sub-row th:nth-child(5){background:#f0d0cc;color:#8c3028}
+.rubrik-tbl tbody td{padding:9px 12px;border-bottom:1px solid #e0e0e0;vertical-align:top;line-height:1.45}
+.rubrik-tbl tbody tr:last-child td{border-bottom:none}
+.rubrik-tbl tbody tr:nth-child(even) td{background:#f8f9fa}
+.rubrik-tbl tbody td:first-child{font-weight:700;color:#37474f;background:#f0f2f4!important}
+.rubrik-tbl tbody td:nth-child(2){color:#1d5c40}.rubrik-tbl tbody td:nth-child(3){color:#234e72}
+.rubrik-tbl tbody td:nth-child(4){color:#7a5020}.rubrik-tbl tbody td:nth-child(5){color:#8c3028}
+.rubrik-tbl.t3 thead .head-row th:first-child{background:#546e7a;width:30%}
+.rubrik-tbl.t3 thead .head-row th:nth-child(2){background:#7d5fa0;width:18%}
+.rubrik-tbl.t3 thead .head-row th:nth-child(3){background:#4a5568;width:52%}
+.rubrik-tbl.t3 thead .sub-row th:nth-child(2){background:#ede5f5;color:#7d5fa0}
+.rubrik-tbl.t3 thead .sub-row th:nth-child(3){background:#eaecee;color:#4a5568}
+.rubrik-tbl.t3 tbody td:nth-child(2){text-align:center;color:#2d3748}
+.rubrik-tbl.t3 tbody td:nth-child(3){color:#444}
+.sb4{background:#c2ddd0;color:#1d5c40;display:inline-block;padding:3px 10px;border-radius:6px;font-weight:800;font-size:.78rem}
+.sb3{background:#bdd4e8;color:#234e72;display:inline-block;padding:3px 10px;border-radius:6px;font-weight:800;font-size:.78rem}
+.sb2{background:#f0e0c0;color:#7a5020;display:inline-block;padding:3px 10px;border-radius:6px;font-weight:800;font-size:.78rem}
+.sb1{background:#f0d0cc;color:#8c3028;display:inline-block;padding:3px 10px;border-radius:6px;font-weight:800;font-size:.78rem}
+.nilai-box{background:#ede5f5;border-radius:8px;padding:16px 18px;border-left:5px solid #7d5fa0;margin-top:4px}
+.nilai-box h3{font-family:'Fredoka One',cursive;color:#7d5fa0;margin-bottom:8px;font-size:.95rem}
+.nilai-box p{font-size:.84rem;line-height:1.65;color:#444;margin-bottom:6px}
+.rumus{font-family:monospace;background:#fff;padding:7px 13px;border-radius:6px;display:inline-block;margin:3px 0 10px;font-size:.86rem;border:2px solid #7d5fa0;color:#7d5fa0;font-weight:700}
+.pred-tbl-wrap{border-radius:7px;overflow:hidden;margin-top:8px}
+.pred-tbl{width:100%;border-collapse:collapse}
+.pred-tbl th{background:#7d5fa0;color:#fff;padding:8px 13px;font-family:'Fredoka One',cursive;font-size:.86rem}
+.pred-tbl td{padding:8px 13px;text-align:center;font-weight:700;font-size:.84rem;border-bottom:1px solid #eee}
+.pred-tbl tr:last-child td{border-bottom:none}
+.p-a{background:#c2ddd0;color:#1d5c40}.p-b{background:#bdd4e8;color:#234e72}
+.p-c{background:#f0e0c0;color:#7a5020}.p-d{background:#f0d0cc;color:#8c3028}
+.rubrik-kartu-wrap{display:none}
+.btn-print{background:#7d5fa0;color:#fff;border:none;padding:10px 26px;border-radius:18px;font-family:'Fredoka One',cursive;font-size:.95rem;cursor:pointer;margin-bottom:18px}
+.btn-print:hover{background:#5c3d7a}
+@media print{.btn-print{display:none}}
+</style></head><body>
+<button class="btn-print" onclick="window.print()">🖨️ Cetak Sekarang</button>
+<h1>📊 Rubrik Penilaian</h1>
+<p class="sub">Bahan Ajar Bahasa Indonesia — Kalimat Transitif &amp; Intransitif | Kelas 4 SD | Kelompok 1</p>
+${isi}
+</body></html>`;
+  const blob = new Blob([html], {type:'text/html'});
+  window.open(URL.createObjectURL(blob), '_blank');
+}
+</script>
+</body>
+</html>
